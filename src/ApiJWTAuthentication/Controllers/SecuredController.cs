@@ -10,6 +10,7 @@ namespace ApiJWTAuthentication.Controllers
     public class SecuredController : ControllerBase
     {
         [HttpGet]
+        [Authorize(Roles ="Administrator")]
         public async Task<IActionResult> GetSecuredDataAsync()
         {
             return Ok("This Secured Data is available only for Authenticated Users.");
